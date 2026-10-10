@@ -1,0 +1,67 @@
+table 'silver lectura_5min'
+	lineageTag: ffbbada1-0f25-4295-bb56-36f526798301
+
+	column ts
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 310dddc6-cd5c-436c-b3cf-6d02ef7427df
+		summarizeBy: none
+		sourceColumn: ts
+
+		variation Variación
+			isDefault
+			relationship: 808b7f8c-3033-4c5f-a6f9-e5707c51cd54
+			defaultHierarchy: LocalDateTable_d2541125-ca8b-4843-be3c-b2229319eefd.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column dispositivo_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 63049399-68e1-4287-804a-9c5c579e18ca
+		summarizeBy: sum
+		sourceColumn: dispositivo_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column p_ac_kw
+		dataType: double
+		lineageTag: aef7f62d-68ac-436a-93e1-2834e70dbf08
+		summarizeBy: sum
+		sourceColumn: p_ac_kw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column irradiancia_wm2
+		dataType: double
+		lineageTag: b5a75716-1057-49c2-a5ca-f014f583e8dd
+		summarizeBy: sum
+		sourceColumn: irradiancia_wm2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column temp_modulo_c
+		dataType: double
+		lineageTag: 8921e483-7a77-49a2-b05d-e2f3b2e09ccf
+		summarizeBy: sum
+		sourceColumn: temp_modulo_c
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'silver lectura_5min' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("localhost:5432", "solarbi"),
+				    silver_lectura_5min = Origen{[Schema="silver",Item="lectura_5min"]}[Data]
+				in
+				    silver_lectura_5min
+
+	annotation PBI_ResultType = Table
+

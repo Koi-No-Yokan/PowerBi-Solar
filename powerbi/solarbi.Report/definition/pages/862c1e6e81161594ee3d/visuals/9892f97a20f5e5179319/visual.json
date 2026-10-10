@@ -1,0 +1,89 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "9892f97a20f5e5179319",
+  "position": {
+    "x": 0,
+    "y": 539.81762917933133,
+    "z": 2,
+    "height": 539.81762917933133,
+    "width": 768.87537993920967,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dwh fact_energia_dia"
+                        }
+                      },
+                      "Property": "pct_datos_validos"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(dwh fact_energia_dia.pct_datos_validos)",
+              "nativeQueryRef": "Suma de pct_datos_validos"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "dwh fact_energia_dia"
+                      }
+                    },
+                    "Property": "pct_datos_validos"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6e7b4aae5cf5c3ff0e27",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dwh fact_energia_dia"
+                  }
+                },
+                "Property": "pct_datos_validos"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

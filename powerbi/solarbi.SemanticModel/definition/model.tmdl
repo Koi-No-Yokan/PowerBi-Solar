@@ -1,0 +1,23 @@
+model Model
+	culture: es-CO
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["dwh fact_energia_dia","silver lectura_5min"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'dwh fact_energia_dia'
+ref table DateTableTemplate_94b1cadd-989c-4abb-b0b5-db825c028bdc
+ref table LocalDateTable_e473b4ea-d719-4674-9a92-f524edf48f59
+ref table 'silver lectura_5min'
+ref table LocalDateTable_d2541125-ca8b-4843-be3c-b2229319eefd
+
+ref cultureInfo es-CO
+

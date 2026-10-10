@@ -1,0 +1,140 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "e777e826296129a661ba",
+  "position": {
+    "x": 768.87537993920967,
+    "y": 0,
+    "z": 1,
+    "height": 1079.6352583586627,
+    "width": 1151.1246200607902,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "dwh fact_energia_dia"
+                            }
+                          },
+                          "Name": "Variación",
+                          "Property": "fecha_key"
+                        }
+                      },
+                      "Hierarchy": "Jerarquía de fechas"
+                    }
+                  },
+                  "Level": "Día"
+                }
+              },
+              "queryRef": "dwh fact_energia_dia.fecha_key.Variación.Jerarquía de fechas.Día",
+              "nativeQueryRef": "fecha_key Día",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dwh fact_energia_dia"
+                    }
+                  },
+                  "Property": "Energia_total_kwh"
+                }
+              },
+              "queryRef": "dwh fact_energia_dia.Energia_total_kwh",
+              "nativeQueryRef": "Energia_total_kwh"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "PropertyVariationSource": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dwh fact_energia_dia"
+                          }
+                        },
+                        "Name": "Variación",
+                        "Property": "fecha_key"
+                      }
+                    },
+                    "Hierarchy": "Jerarquía de fechas"
+                  }
+                },
+                "Level": "Día"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6e683a532cc43649d843",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "dwh fact_energia_dia"
+                      }
+                    },
+                    "Name": "Variación",
+                    "Property": "fecha_key"
+                  }
+                },
+                "Hierarchy": "Jerarquía de fechas"
+              }
+            },
+            "Level": "Día"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7df0e6bf110e06c67e82",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dwh fact_energia_dia"
+              }
+            },
+            "Property": "Energia_total_kwh"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

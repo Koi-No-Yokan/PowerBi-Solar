@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "solarbi"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5818eabd-f76f-4701-a290-87aad76f2cb7"
+  }
+}

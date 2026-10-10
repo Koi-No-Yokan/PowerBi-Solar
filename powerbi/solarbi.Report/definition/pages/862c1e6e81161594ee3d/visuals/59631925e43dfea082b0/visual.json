@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "59631925e43dfea082b0",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 539.81762917933133,
+    "width": 768.87537993920967,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dwh fact_energia_dia"
+                    }
+                  },
+                  "Property": "Energia_total_kwh"
+                }
+              },
+              "queryRef": "dwh fact_energia_dia.Energia_total_kwh",
+              "nativeQueryRef": "Energia_total_kwh",
+              "format": "0.00"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dwh fact_energia_dia"
+                  }
+                },
+                "Property": "Energia_total_kwh"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dc564688888aac7593bb",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dwh fact_energia_dia"
+              }
+            },
+            "Property": "Energia_total_kwh"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+relationship 90c874eb-dc5f-4470-9fe4-2b4471f023be
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'dwh fact_energia_dia'.fecha_key
+	toColumn: LocalDateTable_e473b4ea-d719-4674-9a92-f524edf48f59.Date
+
+relationship 808b7f8c-3033-4c5f-a6f9-e5707c51cd54
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'silver lectura_5min'.ts
+	toColumn: LocalDateTable_d2541125-ca8b-4843-be3c-b2229319eefd.Date
+
