@@ -1,0 +1,24 @@
+# IDE
+.idea/
+*.iml
+
+# Claude Code / MCP
+.claude/
+.mcp.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Credenciales
+.env
+*.env
+
+# SO
+.DS_Store
+Thumbs.db
+
+# Power BI temporales
+*.pbix.tmp
